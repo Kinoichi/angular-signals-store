@@ -1,0 +1,36 @@
+<nav class="sidenav">
+  <div class="sidenav-header">
+    <img src="assets/logo.svg" alt="Logo" class="logo" />
+    <span>My App</span>
+  </div>
+
+  <ul class="nav-list">
+    <li class="nav-item">
+      <a routerLink="/dashboard" routerLinkActive="active-link" class="nav-link">
+        <i class="icon-dashboard"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a routerLink="/profile" routerLinkActive="active-link" class="nav-link">
+        <i class="icon-user"></i>
+        <span>Profile</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a routerLink="/settings" routerLinkActive="active-link" class="nav-link">
+        <i class="icon-settings"></i>
+        <span>Settings</span>
+      </a>
+    </li>
+  </ul>
+
+  <div class="sidenav-footer">
+    <button (click)="onLogout()" class="btn-logout">
+      <i class="icon-logout"></i>
+      <span>Logout</span>
+    </button>
+  </div>
+</nav>

@@ -1,0 +1,6 @@
+{
+  "users": [
+    { "id": "1", "name": "Christian Baccichet", "email": "cbacc@example.com", "role": "admin" }
+  ],
+  "auth": { "status": "success", "token": "abcdef123456", "id": "1" }
+}
