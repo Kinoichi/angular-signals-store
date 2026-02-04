@@ -2,5 +2,5 @@
   "users": [
     { "id": "1", "name": "Christian Baccichet", "email": "cbacc@example.com", "role": "admin" }
   ],
-  "login": { "status": "success", "token": "abcdef123456" }
+  "auth": { "status": "success", "token": "abcdef123456", "id": "1" }
 }

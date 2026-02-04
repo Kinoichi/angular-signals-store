@@ -1,12 +1,16 @@
 import { Routes } from '@angular/router';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
+import { AuthLayout } from './layout/auth-layout/auth-layout';
+import { Login } from './features/login/login';
 
 export const routes: Routes = [
   // Auth Routes
   {
     path: '',
-    component: AuthLayoutComponent,
-    children: [{ path: 'login', component: LoginComponent }],
+    component: AuthLayout,
+    children: [
+      { path: 'login', loadComponent: () => import('./features/login/login').then((m) => m.Login) },
+    ],
   },
   // App Routes
   {

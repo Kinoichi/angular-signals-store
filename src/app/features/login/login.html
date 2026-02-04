@@ -1,0 +1,12 @@
+<main>
+  <input type="email" [ngModel]="email()" (ngModelChange)="email.set($event)" placeholder="Email" />
+
+  <input
+    type="password"
+    [ngModel]="password()"
+    (ngModelChange)="password.set($event)"
+    placeholder="Password"
+  />
+
+  <button (click)="onSubmit()">Login</button>
+</main>
