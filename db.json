@@ -1,6 +1,47 @@
 {
   "users": [
-    { "id": "1", "name": "Christian Baccichet", "email": "cbacc@example.com", "role": "admin" }
+    {
+      "id": "1",
+      "name": "Christian Baccichet",
+      "email": "cbacc@example.com",
+      "role": "admin"
+    }
   ],
-  "auth": { "status": "success", "token": "abcdef123456", "id": "1" }
+  "auth": {
+    "status": "success",
+    "token": "abcdef123456",
+    "id": "1"
+  },
+  "books": [
+    {
+      "id": "1",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "comments": [
+        {
+          "id": "1",
+          "text": "A masterpiece of 20th-century literature."
+        },
+        {
+          "id": "2",
+          "text": "The characters are so vivid and memorable."
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee"
+    },
+    {
+      "id": "3",
+      "title": "1984",
+      "author": "George Orwell"
+    },
+    {
+      "id": "f4c1",
+      "title": "ese",
+      "author": "es"
+    }
+  ]
 }

@@ -62,8 +62,9 @@ export const AuthStore = signalStore(
             // Reuse the helper / Riusa l'helper
             await loadUserProfile(authResponse.id);
 
-            //router.navigate(['/dashboard']);
+            router.navigate(['/books']);
           } catch (err) {
+            console.error('API Error:', err);
             patchState(store, { isLoading: false, error: 'Login failed' });
           }
         },

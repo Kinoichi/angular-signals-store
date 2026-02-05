@@ -9,4 +9,13 @@
   />
 
   <button (click)="onSubmit()">Login</button>
+  @if (authStore.isLoading() === false) {
+    <app-loader>Looking for books...</app-loader>
+    <app-skeleton height="150px" width="100px" />
+    <div>
+      <app-skeleton width="150px" height="24px"> </app-skeleton>
+      <app-skeleton width="100px" height="16px" />
+    </div>
+  }
+  <p *ngIf="authStore.error()">{{ authStore.error() }}</p>
 </main>

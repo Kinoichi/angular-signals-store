@@ -1,0 +1,20 @@
+@if (bookStore.isLoading()) {
+  <app-loader>Loading books...</app-loader>
+  <app-skeleton height="150px" width="100px" />
+  <div>
+    <app-skeleton width="150px" height="24px"> </app-skeleton>
+    <app-skeleton width="100px" height="16px" />
+  </div>
+} @else if (bookStore.error()) {
+  <p>{{ bookStore.error() }}</p>
+} @else {
+  @for (book of bookStore.books(); track book.id) {
+    <div class="book" [routerLink]="['/books', book.id]">
+      <h3>{{ book.title }}</h3>
+      <p>{{ book.author }}</p>
+    </div>
+  }
+  <p>Showing {{ bookStore.booksCount() }} books</p>
+}
+
+<button routerLink="/books/new">Add New Book</button>

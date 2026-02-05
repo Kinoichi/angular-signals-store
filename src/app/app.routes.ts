@@ -18,8 +18,10 @@ export const routes: Routes = [
     component: MainLayoutComponent,
     /* canActivate: [authGuard], */ // Protect these routes / Proteggi queste rotte
     children: [
-      /* { path: 'dashboard', component: DashboardComponent },
-      { path: 'profile', component: ProfileComponent } */
+      {
+        path: 'books',
+        loadChildren: () => import('./features/books/book.routes').then((m) => m.BOOK_ROUTES),
+      },
     ],
   },
 ];

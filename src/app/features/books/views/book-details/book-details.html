@@ -1,0 +1,15 @@
+<div>
+  @if (bookStore.isLoading()) {
+    <app-loader>Loading book details...</app-loader>
+    <app-skeleton height="150px" width="100px" />
+    <div>
+      <app-skeleton width="150px" height="24px"> </app-skeleton>
+      <app-skeleton width="100px" height="16px" />
+    </div>
+  } @else if (bookStore.error()) {
+    <p>{{ bookStore.error() }}</p>
+  } @else if (bookStore.selectedBook()) {
+    <h2>{{ bookStore.selectedBook()?.title }}</h2>
+    <p>Author: {{ bookStore.selectedBook()?.author }}</p>
+  }
+</div>
