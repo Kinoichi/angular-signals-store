@@ -1,0 +1,7 @@
+<p>session-storage works!</p>
+@for (item of resultados() | keyvalue; track item.key) {
+  {{ item.key }}: {{ item.value }}
+}
+
+<button type="text" (click)="add()">add</button>
+<button type="text" (click)="update()">update</button>

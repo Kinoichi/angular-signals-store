@@ -1,0 +1,10 @@
+<p>search-observable works!</p>
+<input type="text" (input)="search($event.target.value)" placeholder="Search..." />
+
+@if (resultados$) {
+  @for (country of resultados$ | async; track country.id) {
+    {{ country.name }}
+  }
+} @else {
+  <p>loading........</p>
+}

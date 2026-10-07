@@ -1,0 +1,8 @@
+<p>search-signal works!</p>
+<input type="text" #searchInput (input)="search.set(searchInput.value)" />
+
+<ul>
+  @for (country of countries(); track country.id) {
+    <p>{{ country.name }}</p>
+  }
+</ul>

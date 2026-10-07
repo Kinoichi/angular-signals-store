@@ -1,0 +1,6 @@
+<p>search-api works!</p>
+<input type="text" #searchInput (input)="search.set(searchInput.value)" />
+
+@for (user of filteredUsers(); track user.id) {
+  <p>{{ user!.name }}</p>
+}

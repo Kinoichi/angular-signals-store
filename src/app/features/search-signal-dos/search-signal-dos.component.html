@@ -1,0 +1,6 @@
+<p>search-signal-dos works!</p>
+<input type="text" #searchInput (input)="search.set(searchInput.value)" />
+
+@for (country of countries(); track country.id) {
+  {{ country.name }}
+}

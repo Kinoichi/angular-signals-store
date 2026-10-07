@@ -1,0 +1,31 @@
+<h2>User activity</h2>
+<div>
+  <button (click)="smonitorStore.setSelectedUserActivity('1')">User1</button>
+  <button (click)="smonitorStore.setSelectedUserActivity('2')">User2</button>
+  <button (click)="smonitorStore.setSelectedUserActivity('3')">User3</button>
+</div>
+
+<div>
+  <p>{{ smonitorStore.userActivity()?.userId }}</p>
+  <p>{{ smonitorStore.userActivity()?.lastAction }}</p>
+  <p>{{ smonitorStore.userActivity()?.timestamp }}</p>
+</div>
+
+<h2>Price update</h2>
+<input type="text" #priceInput (input)="smonitorStore.updateFilter(priceInput.value)" />
+
+<div>
+  <p>{{ smonitorStore.priceUpdate()?.productId }}</p>
+  <p>{{ smonitorStore.priceUpdate()?.price }}</p>
+  <p>{{ smonitorStore.priceUpdate()?.currency }}</p>
+</div>
+
+<h2>Order stream</h2>
+
+<button type="text" (click)="getNewOrders()">Get new orders</button>
+
+<div>
+  @for (order of smonitorStore.orders().slice(0, 5); track order.id) {
+    <p>{{ order.id }} - {{ order.productId }}</p>
+  }
+</div>

@@ -1,0 +1,37 @@
+<h2>User activity</h2>
+<div>
+  <button (click)="updateUserActivity('1')">User1</button>
+  <button (click)="updateUserActivity('2')">User2</button>
+  <button (click)="updateUserActivity('3')">User3</button>
+</div>
+
+<div>
+  @let activity = userActivity$ | async;
+  <p>{{ activity?.userId }}</p>
+  <p>{{ activity?.lastAction }}</p>
+  <p>{{ activity?.timestamp }}</p>
+</div>
+
+<h2>Price update</h2>
+<input type="text" #priceInput (input)="updateSearchPrice(priceInput.value)" />
+
+<div>
+  @let priceUpdate = priceUpdate$ | async;
+  <p>{{ priceUpdate?.productId }}</p>
+  <p>{{ priceUpdate?.price }}</p>
+  <p>{{ priceUpdate?.currency }}</p>
+</div>
+
+<h2>Order stream</h2>
+
+<button type="text" (click)="getNewOrders()">Get new orders</button>
+
+<div>
+  @for (order of (orders$ | async)?.slice(0, 5); track order.id) {
+    <p>{{ order.id }} - {{ order.productId }}</p>
+  }
+</div>
+
+@if (highDemand$ | async) {
+  <p>⚠️ Alta demanda</p>
+}

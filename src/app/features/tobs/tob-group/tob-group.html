@@ -1,0 +1,7 @@
+<p>tob-group works!</p>
+@for (tab of tabs; track $index) {
+  <button (click)="updateActive($index)" [style.background]="active() === $index ? 'red' : 'blue'">
+    {{ $index }}
+  </button>
+}
+<ng-content select="app-tob"></ng-content>

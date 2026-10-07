@@ -1,0 +1,5 @@
+<p>local-storage works!</p>
+<button (click)="add()">Add</button>
+<button (click)="update()">Update</button>
+
+<div *ngFor="let local of resultados$ | async | keyvalue">{{ local.key }}: {{ local.value }}</div>

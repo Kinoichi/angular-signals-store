@@ -1,0 +1,5 @@
+<p>tab-group works!</p>
+@for (tab of tabs; track $index) {
+  <button [class.active]="$index === active()" (click)="updateActive($index)">{{ $index }}</button>
+}
+<ng-content select="app-tab"></ng-content>

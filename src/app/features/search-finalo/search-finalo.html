@@ -1,0 +1,11 @@
+<input type="text" #searchInput (input)="search.set(searchInput.value)" />
+
+@for (country of resultados$(); track country.id) {
+  <p>{{ country.name }}</p>
+}
+
+<div>
+  {{ test }}
+</div>
+
+<button type="button" (click)="changeTest()"></button>

@@ -1,0 +1,9 @@
+<p>search-signal-tres works!</p>
+
+<input type="text" #searchInput (input)="search.set(searchInput.value)" />
+
+@if (countries()) {
+  @for (country of countries(); track country.id) {
+    <div>{{ country.name }}</div>
+  }
+}

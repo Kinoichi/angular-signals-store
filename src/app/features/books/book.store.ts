@@ -2,7 +2,6 @@ import { patchState, signalStore, withComputed, withMethods, withState } from '@
 import { BookService } from './services/book.service';
 import { computed, inject } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
-import path from 'path';
 import { Book } from './models/book.model';
 import { Router } from '@angular/router';
 

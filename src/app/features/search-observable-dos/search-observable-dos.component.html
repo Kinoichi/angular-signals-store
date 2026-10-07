@@ -1,0 +1,10 @@
+<p>search-observable-dos works!</p>
+<input type="text" #searchInput (input)="onInputChange(searchInput.value)" />
+
+@if (resultados$) {
+  @for (country of resultados$ | async; track country.id) {
+    {{ country.name }}
+  }
+} @else {
+  <p>loading........</p>
+}
